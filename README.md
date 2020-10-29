@@ -16,3 +16,7 @@
 ## High Level Architecture
 
 ![My Image](https://github.com/redis-developer/reinvent20-demo/blob/main/images/arch_demo.png)
+
+## Phase #1
+
+- Leveraging RediSearch 
