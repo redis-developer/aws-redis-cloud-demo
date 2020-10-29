@@ -20,3 +20,7 @@
 ## Phase #1
 
 - Leveraging RediSearch 
+
+## Pre-requisite:
+
+- Redis Enterprise Cloud Essential Subscription
