@@ -10,7 +10,7 @@
    - Create one more database on Redis Cloud with module(s)
    - Deploy and run the application.
 
-- The application should focus on development and highlight the benefits of Redis Cloud compared to Elasticache.
+- The application focuses on development and highlight the benefits of Redis Cloud.
 - Two microservices, one with Python and one with Typescript
 
 ## High Level Architecture
