@@ -13,3 +13,6 @@
 - The application should focus on development and highlight the benefits of Redis Cloud compared to Elasticache.
 - Two microservices, one with Python and one with Typescript
 
+## High Level Architecture
+
+![My Image](https://github.com/redis-developer/reinvent20-demo/blob/main/images/arch_demo.png)
