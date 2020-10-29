@@ -1,4 +1,4 @@
-# Demo of using Redis Enterprise Cloud Essential as a user caching store leveraging AWS Services
+# A Demo App using Redis Enterprise Cloud with AWS Services
 
 
 ## High Level Requirements:
