@@ -22,12 +22,22 @@ through application. It allow users to find merchants, pay them. It also allows 
 
 ![My Image](https://github.com/redis-developer/reinvent20-demo/blob/main/images/arch_demo.png)
 
+### List of Functionalities
 
+-  User Registration
+-  Merchant Search
+-  Paying Money to merchants
+-  Merchant Suggestion based on previous transaction history
+-  CRON lambda to process payments
+-  User profile
 
 ## Phase #1
 
 - Leveraging RediSearch 
 
+<tbd>
+
 ## Pre-requisite:
 
 - Redis Enterprise Cloud Essential Subscription
+- AWS Account
