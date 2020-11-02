@@ -8,7 +8,7 @@ export const moviesListHandler: APIGatewayProxyHandler = async (
   _context
 ) => {
   try {
-    let movies = await client.keys("user:*");
+    let movies = await client.scan("movie:*"); // use scan
     movies = await Promise.all(
       movies.map(async (movieName) => {
         const movieDetails = await client.hgetall(movieName);

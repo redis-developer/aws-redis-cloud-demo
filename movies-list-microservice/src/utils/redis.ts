@@ -19,3 +19,4 @@ export const get = promisify(client.get).bind(client);
 export const set = promisify(client.set).bind(client);
 export const keys = promisify(client.keys).bind(client);
 export const hgetall = promisify(client.hgetall).bind(client);
+export const scan = promisify(client.scan).bind(client);
