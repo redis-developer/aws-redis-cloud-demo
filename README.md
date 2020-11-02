@@ -13,9 +13,16 @@
 - The application focuses on development and highlight the benefits of Redis Cloud.
 - Two microservices, one with Python and one with Typescript
 
-## High Level Architecture
+## High Level Architectural Diagram
+
+Below is an architecture of a digital wallet solution which allows the users to interact and find merchants and pay them
+through application. It allow users to find merchants, pay them. It also allows to view current balance
+
+
 
 ![My Image](https://github.com/redis-developer/reinvent20-demo/blob/main/images/arch_demo.png)
+
+
 
 ## Phase #1
 
