@@ -18,9 +18,15 @@ provider:
     REDIS_PASSWORD: IdEOtZyRxzxwNXqYmqRla4XrPAqUqw3o
 
 functions:
-  hello:
+  listMovies:
     handler: src/handler.moviesListHandler
     events:
       - http:
           method: get
           path: movies
+  getMovie:
+    handler: src/handler.moviesGetHandler
+    events:
+      - http:
+          method: get
+          path: movies/{id}
