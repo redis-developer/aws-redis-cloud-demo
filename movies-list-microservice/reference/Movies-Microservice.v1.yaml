@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: Movies Microservice
+  version: '1.0'
+  description: 'API that lists '
+  license:
+    name: Proprietory
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /movies/search:
+    get:
+      summary: Show list of movies
+      tags: []
+      responses: {}
+      operationId: get-movies
+components:
+  schemas: {}

@@ -20,7 +20,7 @@ through application. It allow users to find merchants, pay them. It also allows 
 
 
 
-![My Image](https://github.com/redis-developer/reinvent20-demo/blob/main/images/arch_demo.png)
+
 
 ### List of Functionalities
 
@@ -33,7 +33,8 @@ through application. It allow users to find merchants, pay them. It also allows 
 
 ## Phase #1
 
-- Leveraging RediSearch 
+- Leveraging RediSearch
+- Implement RedisSearch demo connected to AWS using Typescript 
 
 <tbd>
 
