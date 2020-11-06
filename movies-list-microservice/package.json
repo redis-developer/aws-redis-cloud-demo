@@ -8,7 +8,9 @@
     "start": "serverless offline start"
   },
   "dependencies": {
+    "@types/redis": "^2.8.28",
     "redis": "^3.0.2",
+    "redis-redisearch": "^1.0.1",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {

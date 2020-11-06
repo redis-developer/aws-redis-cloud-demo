@@ -15,11 +15,12 @@
 
 ## High Level Architecture
 
-![My Image](https://github.com/redis-developer/reinvent20-demo/blob/main/images/arch_demo.png)
+
 
 ## Phase #1
 
-- Leveraging RediSearch 
+- Leveraging RediSearch
+- Implement RedisSearch demo connected to AWS using Typescript 
 
 ## Pre-requisite:
 

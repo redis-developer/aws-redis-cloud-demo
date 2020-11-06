@@ -13,9 +13,9 @@ provider:
   name: aws
   runtime: nodejs10.x
   environment:
-    REDIS_HOST: redis-17106.c239.us-east-1-2.ec2.cloud.redislabs.com
-    REDIS_PORT: 17106
-    REDIS_PASSWORD: IdEOtZyRxzxwNXqYmqRla4XrPAqUqw3o
+    REDIS_HOST: redis-12555.c212.ap-south-1-1.ec2.cloud.redislabs.com
+    REDIS_PORT: 12555
+    REDIS_PASSWORD: ZtW0Td51cI2kEsJNEnpFz6N2y1isaBsh
 
 functions:
   listMovies:
@@ -23,10 +23,20 @@ functions:
     events:
       - http:
           method: get
-          path: movies
+          path: movies/search
+          cors: true
+  searchMovies:
+    # handler: src/handler.moviesGroupByHandler
+    handler: src/handler.moviesGroupByHandler
+    events:
+      - http:
+          method: get
+          path: movies/group_by/{field}
+          cors: true
   getMovie:
     handler: src/handler.moviesGetHandler
     events:
       - http:
           method: get
           path: movies/{id}
+          cors: true

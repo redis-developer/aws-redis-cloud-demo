@@ -1,4 +1,4 @@
-export const timer = function(name) {
+export const benchmarker = function(name) {
     const start = new Date();
     return {
         stop: function() {
