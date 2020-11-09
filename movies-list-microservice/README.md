@@ -52,7 +52,7 @@ bash import.sh
 
 
 
-- run &nbsp; `bash deploy.sh`, you show get an output like this:
+- run &nbsp; `serverless deploy`, you should get an output like this:
 ```bash
 Service Information
 service: movies-list-microservice
