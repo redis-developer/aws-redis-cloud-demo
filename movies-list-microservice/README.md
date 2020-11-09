@@ -50,7 +50,7 @@ All of the Lambda functions in your serverless service can be found in serverles
 bash import.sh
 ``` 
 
-- For deploying your application to AWS, edit deploy.sh putting in your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+- For deploying your application to AWS, edit deploy.sh putting in your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
 ```bash
 export AWS_ACCESS_KEY_ID=[AWS_ACCESS_KEY_ID]
 export AWS_SECRET_ACCESS_KEY=[AWS_SECRET_ACCESS_KEY]
