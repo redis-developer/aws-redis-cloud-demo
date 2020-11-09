@@ -1,18 +1,8 @@
 # How to use Redis Enterprise Cloud with AWS Lambda and serverless architecture
-### Introduction
-
-### Objectives
-
-### Structure
 
 ### Pre Requisites
 - Nodejs 
 - AWS account & Credentials Setup
-
-### Installation Steps
-```
-$ npm install -g serverless 
-```
 
 ### AWS - Config Credentials
 
@@ -33,29 +23,16 @@ $ export AWS_ACCESS_KEY_ID={}
 $ export AWS_SECRET_ACCESS_KEY={}
 ```
 
-### Generate the project boilerplate
+### Install Dependencies
 
+```bash
+cd movies-list-microservice
+npm install
 ```
-$ serverless create --template aws-nodejs-typescript --path movies-list-microservice
-```
 
-You'll see the following files in your working directory:
-- serverless.yml
-- handler.js
-
-Each service configuration is managed in the serverless.yml file.
-
-Here we configure the Serverless.yml to define 2 lambda functions. One lambda function would be used for the List of Movies while another would use it to get the details of a particular movie.
-Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
-
-`handler` parameter species where should the yaml find this function in our codebase.
-`events` parameter specifies events to which we are subscribed to for the. We want to expose our API over HTTP. So we are going to connect our application to the API gateway and then listen to HTTP type events. For this we specify the HTTP event and then configure the parameters we want to listen to.
 
 ### Configuring serverless framework
 All of the Lambda functions in your serverless service can be found in serverless.yml under the functions property.
-
-### File Structure
-Following is our file structure for our project:
 
 ### File Structure
 - Create an account on Redislabs 
@@ -67,15 +44,18 @@ Following is our file structure for our project:
     REDIS_PASSWORD: [REDIS_PASSWORD]
 ```
 - Set the same credentials in import.sh file
+
 - Run the following command to load the dataset into your redis instance:
 ```bash
 bash import.sh
 ``` 
+
 - For deploying your application to AWS, edit deploy.sh putting in your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 ```bash
 export AWS_ACCESS_KEY_ID=[AWS_ACCESS_KEY_ID]
 export AWS_SECRET_ACCESS_KEY=[AWS_SECRET_ACCESS_KEY]
 ``` 
+
 - run &nbsp; `bash deploy.sh`, you show get an output like this:
 ```bash
 Service Information
