@@ -19,7 +19,9 @@ Below is an architecture of a digital wallet solution which allows the users to 
 through application. It allow users to find merchants, pay them. It also allows to view current balance
 
 
-
+<div style="text-align:center">
+   <img data-src="/docs/assets/images/png/architecture-diagram.png" class="img-fluid  rounded shadowed lazy"/>
+</div>
 
 
 ### List of Functionalities
