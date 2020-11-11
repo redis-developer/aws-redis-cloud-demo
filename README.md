@@ -12,13 +12,27 @@
 - The application focuses on development and highlight the benefits of Redis Cloud.
 - Two microservices, one with Python and one with Typescript
 
-## High Level Architecture
+## High Level Architectural Diagram
 
 ![My Image](./images/image.png)
+
+
+
+
+### List of Functionalities
+
+-  User Registration
+-  Merchant Search
+-  Paying Money to merchants
+-  Merchant Suggestion based on previous transaction history
+-  CRON lambda to process payments
+-  User profile
 
 ## Phase #1
 - Leveraging RediSearch
 - Implement RedisSearch demo connected to AWS using Typescript 
+
+<tbd>
 
 ## Pre-requisite:
 
