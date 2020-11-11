@@ -20,6 +20,8 @@
 ### List of Functionalities
 
 - Movie List, Search, Agreegation/Sorting using 
+- Adding, Deleting Comments to a movie
+- Movie comments search
 
 ## Phase #1
 - Leveraging RediSearch
