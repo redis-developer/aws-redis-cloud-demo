@@ -1,12 +1,16 @@
 from chalice import Chalice
 import redis
 from utils.response_handler import return_response, cors_config
+from utils import decrypt_sec_key_with_kms_key
 from services.comments_service import CommentService
 import urllib.parse
+import boto3
+import os
 
+redis_password =decrypt_sec_key_with_kms_key(os.environ['REDIS_PASSWORD'])
 
-client = redis.Redis(host="redis-12555.c212.ap-south-1-1.ec2.cloud.redislabs.com",
-                     port=12555, password="ZtW0Td51cI2kEsJNEnpFz6N2y1isaBsh", decode_responses=True)
+client = redis.Redis(host=os.environ['REDIS_HOST'],
+                     port=os.environ['REDIS_PORT'], password=redis_password, decode_responses=True)
 
 
 app = Chalice(app_name='movie-comments-microservice')
@@ -39,7 +43,17 @@ def index(comment_id):
     return return_response(comment_data, 200)
 
 
-@app.route('/search', methods=['GET'], content_types=['application/json'], cors=cors_config)
-def search():
-    data = comment.search(limit=10, offset=0)
+@app.route('/movies/{movie_id}/comments', methods=['GET'], content_types=['application/json'], cors=cors_config)
+def search(movie_id):
+    limit = 10
+    offset = 0
+    if app.current_request.query_params:
+        limit = int(app.current_request.query_params['limit'])
+        offset = int(app.current_request.query_params['offset'])
+
+    data = comment.search(
+        limit=limit,
+        offset=offset,
+        movie=movie_id
+    )
     return data

@@ -25,3 +25,4 @@
 ## Pre-requisite:
 
 - Redis Enterprise Cloud Essential Subscription
+- AWS Accunt and Credentials (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY)

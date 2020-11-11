@@ -3,19 +3,19 @@
     {
       "name": "default-role",
       "resource_type": "iam_role",
-      "role_arn": "arn:aws:iam::155929087771:role/movie-comments-microservice-dev",
+      "role_arn": "arn:aws:iam::486149179373:role/movie-comments-microservice-dev",
       "role_name": "movie-comments-microservice-dev"
     },
     {
       "name": "api_handler",
       "resource_type": "lambda_function",
-      "lambda_arn": "arn:aws:lambda:us-east-1:155929087771:function:movie-comments-microservice-dev"
+      "lambda_arn": "arn:aws:lambda:us-east-1:486149179373:function:movie-comments-microservice-dev"
     },
     {
       "name": "rest_api",
       "resource_type": "rest_api",
-      "rest_api_id": "ejq3anue34",
-      "rest_api_url": "https://ejq3anue34.execute-api.us-east-1.amazonaws.com/api/"
+      "rest_api_id": "1uapujbs2j",
+      "rest_api_url": "https://1uapujbs2j.execute-api.us-east-1.amazonaws.com/api/"
     }
   ],
   "schema_version": "2.0",
