@@ -63,8 +63,13 @@ aws kms encrypt --key-id YOUR_KEY_ID --plaintext YOUR_REDIS_LAB_PASSWORD --outpu
       }
     }
 ```
-
-
+### Setup Redis Data
+- It is expected that you have already imported the movies data set
+- For this microservice to function properly, we will need to create an index over the comments:
+```
+FT.CREATE ms:search:index:comments:movies on HASH PREFIX 1 'ms:comments:' SCHEMA movie_id TEXT SORTABLE user_id TEXT SORTABLE comment TEXT WEIGHT 1.0 timestamp NUMERIC SORTABLE rating NUMERIC SORTABLE
+```
+1. We create a RediSearch index `ms:search:index:comments:movies` specifying schema based on the entities we want to search.
 
 
 
@@ -100,7 +105,6 @@ source ../.chalice-env/bin/activate
 
 
 ```
-FT.CREATE ms:search:index:comments:movies on HASH PREFIX 1 'ms:comments:' FILTER movie_id SCHEMA movie_id NUMERIC SORTABLE user_id NUMERIC SORTABLE comment TEXT WEIGHT 1.0 timestamp NUMERIC SORTABLE rating NUMERIC SORTABLE
+FT.CREATE ms:search:index:comments:movies on HASH PREFIX 1 'ms:comments:' SCHEMA movie_id TEXT SORTABLE user_id TEXT SORTABLE comment TEXT WEIGHT 1.0 timestamp NUMERIC SORTABLE rating NUMERIC SORTABLE
 ```
 
-FT.CREATE ms:search:index:comments:movies on HASH PREFIX 1 'ms:comments:' FILTER @indexName==movie_id SCHEMA movie_id NUMERIC SORTABLE user_id NUMERIC SORTABLE comment TEXT WEIGHT 1.0 timestamp NUMERIC SORTABLE rating NUMERIC SORTABLE

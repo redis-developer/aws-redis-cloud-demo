@@ -7,7 +7,7 @@ import urllib.parse
 import boto3
 import os
 
-redis_password =decrypt_sec_key_with_kms_key(os.environ['REDIS_PASSWORD'])
+redis_password = decrypt_sec_key_with_kms_key(os.environ['REDIS_PASSWORD'])
 
 client = redis.Redis(host=os.environ['REDIS_HOST'],
                      port=os.environ['REDIS_PORT'], password=redis_password, decode_responses=True)
@@ -16,13 +16,13 @@ client = redis.Redis(host=os.environ['REDIS_HOST'],
 app = Chalice(app_name='movie-comments-microservice')
 
 
-comment = CommentService(client=client)
+comment = CommentService(
+    client=client, index_name="ms:search:index:comments:movies")
 
 
 @app.route('/', methods=['POST'], content_types=['application/json'], cors=cors_config)
 def create_comment():
     event = app.current_request.json_body
-    # print('event: %s' % (event))
     comment_id = comment.insert(movie=event.get('movie'), comment=event.get(
         'comment'), user_id=event.get('user_id'), rating=event.get('rating'))
     return return_response({'id': comment_id}, 200)
