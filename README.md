@@ -12,13 +12,22 @@
 - The application focuses on development and highlight the benefits of Redis Cloud.
 - Two microservices, one with Python and one with Typescript
 
-## High Level Architecture
+## High Level Architectural Diagram
 
 ![My Image](./images/image.png)
+
+
+### List of Functionalities
+
+- Movie List, Search, Agreegation/Sorting using 
+- Adding, Deleting Comments to a movie
+- Movie comments search
 
 ## Phase #1
 - Leveraging RediSearch
 - Implement RedisSearch demo connected to AWS using Typescript 
+
+<tbd>
 
 ## Pre-requisite:
 
