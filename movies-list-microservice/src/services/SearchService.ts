@@ -2,6 +2,13 @@ import { client } from "../utils/redis";
 const indexName = process.env.REDIS_INDEX || "idx:movie";
 
 class SearchService {
+
+  /**
+   * Search movie
+   * @param queryString 
+   * @param options 
+   * @param callback 
+   */
   async search(queryString, options, callback) {
     let offset = 0; // default values
     let limit = 10; // default value
@@ -71,6 +78,12 @@ class SearchService {
       callback(err, result);
     });
   }
+
+  /**
+   * Group and count movies by a field
+   * @param field : genre, release_year, ....
+   * @param callback 
+   */
   getMovieGroupBy(field, callback) {
     const retValue = {
       totalResults: 0,
@@ -121,6 +134,23 @@ class SearchService {
       callback(err, retValue);
     });
   }
+
+  /**
+   * 
+   * @param movie Save the movie into a Hash
+   * @param callback 
+   */
+  saveMovie(id, movie, callback) {
+    if (!id.startsWith("movie:")) {
+      id = "movie:"+ id;
+    }
+
+    // updated movie
+    client.hmset( id, movie, function(err) {
+      callback(err, id);
+    } );    
+  }
+
 }
 
 export { SearchService };

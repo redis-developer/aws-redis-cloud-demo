@@ -10,6 +10,12 @@ npm install
 npm run serve
 ```
 
+You can add the URL to the movie service (defaulted to `localhost:3000`) using the following parameter
+
+```
+VUE_APP_MOVIES_SERVICE=https://<lambda-api>.execute-api.<region>.amazonaws.com/dev npm run serve
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
@@ -42,9 +48,7 @@ This command will create a new image and build the maven project into it.
 
 ```shell script
 > docker run --rm  \
-     --env "VUE_APP_SEARCH_API_JAVA=http://host.docker.internal:8085" \
-     --env "VUE_APP_SEARCH_API_NODE=http://host.docker.internal:8086" \
-     --env "VUE_APP_SEARCH_API_PYTHON=http://host.docker.internal:8087" \
+     --env "VUE_APP_MOVIES_SERVICE=<Your movie rest service >" \
      --name "redisearch-frontend"\
      -p 8084:8084 redis/search-frontend
 ```

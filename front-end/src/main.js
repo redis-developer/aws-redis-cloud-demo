@@ -14,6 +14,9 @@ Vue.use(BootstrapVue);
 Vue.config.productionTip = false
 
 Vue.prototype.$sampleQueries = sampleQueries;
+Vue.prototype.$apiServers = {
+  "movies" : process.env.VUE_APP_MOVIES_SERVICE||"http://localhost:3000"
+};
 
 new Vue({
   router,
