@@ -14,11 +14,8 @@
 
 ## High Level Architectural Diagram
 
-![My Image](./images/image.png)
+![My Image](./images/high-level-architectural-diagram.png)
 
-<div style="text-align:center">
-   <img data-src="/docs/assets/images/png/architecture-diagram.png" class="img-fluid  rounded shadowed lazy"/>
-</div>
 
 
 ### List of Functionalities
