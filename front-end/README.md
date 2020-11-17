@@ -55,6 +55,45 @@ Access the Web application with the following URL:
 
 
 ## Deploying to s3:
+
+For creating a new bucket:
+
+```
+aws s3 website s3://www.my-awesome-site.com/ --index-document index.html --error-document error.html
+```
+Recent leaky buckets activities have prohibited an AWS account user to add a public access bucket policy by default whenever any new bucket is created. This is to keep the data secure from bad actors. But in our case, we would require a public access bucket policy for which a user must complete below steps:
+1. Click into your bucket.
+2. Select the "Permisssions" tab at the top.
+3. Under Public Access Settings, click "Edit".
+4. Change "Block new public bucket policies", "Block public and cross-account access if bucket has public policies”, and “Block new public ACLs and uploading public objects” to be false.
+5. Click on Save.
+
+Above steps are must for setting up of bucket policy before adding it to a static website. 
+
+To update the public read access to anyone in the world updating the Bucket Policy of your bucket is must. Follow the below steps to update the bucket policy in AWS console:
+1. Navigate to S3 in the AWS Console.
+2. Click into your bucket.
+3. Click the “Permissions” section.
+4. Select “Bucket Policy”.
+5. Add the following Bucket Policy and then Save
+
+```
+{
+    "Version": "2008-10-17",
+    "Id": "PolicyForPublicWebsiteContent",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::www.my-awesome-site.com/*"
+        }
+    ]
+}
+```
 ```
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
