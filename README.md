@@ -5,7 +5,6 @@
 
 - Create a microservice based application using multiple AWS Services (Lambda, Kinesis, Athena, ...).
 - Developer should be able to:
-
    - Get the code from Github
    - Create one more database on Redis Cloud with module(s)
    - Deploy and run the application.
@@ -15,9 +14,7 @@
 
 ## High Level Architectural Diagram
 
-Below is an architecture of a digital wallet solution which allows the users to interact and find merchants and pay them
-through application. It allow users to find merchants, pay them. It also allows to view current balance
-
+![My Image](./images/image.png)
 
 <div style="text-align:center">
    <img data-src="/docs/assets/images/png/architecture-diagram.png" class="img-fluid  rounded shadowed lazy"/>
@@ -34,7 +31,6 @@ through application. It allow users to find merchants, pay them. It also allows 
 -  User profile
 
 ## Phase #1
-
 - Leveraging RediSearch
 - Implement RedisSearch demo connected to AWS using Typescript 
 
@@ -43,4 +39,4 @@ through application. It allow users to find merchants, pay them. It also allows 
 ## Pre-requisite:
 
 - Redis Enterprise Cloud Essential Subscription
-- AWS Account
+- AWS Accunt and Credentials (AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY)
