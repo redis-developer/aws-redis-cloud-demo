@@ -1,8 +1,8 @@
 from chalice import Chalice
 import redis
-from utils.response_handler import return_response, cors_config
-from utils import decrypt_sec_key_with_kms_key
-from services.comments_service import CommentService
+from chalicelib.utils.response_handler import return_response, cors_config
+from chalicelib.utils import decrypt_sec_key_with_kms_key
+from chalicelib.services.comments_service import CommentService
 import urllib.parse
 import boto3
 import os
