@@ -7,6 +7,7 @@ import urllib.parse
 import boto3
 import os
 
+# we call the KMS decryption utility to get the password for our Redis Database, it takes in the encrypted password from the environment variable, uses KMS decrypter to decrypt the password
 redis_password = decrypt_sec_key_with_kms_key(os.environ['REDIS_PASSWORD'])
 
 client = redis.Redis(host=os.environ['REDIS_HOST'],
