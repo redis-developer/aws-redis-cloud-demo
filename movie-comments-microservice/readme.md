@@ -34,18 +34,18 @@ Setting up KMS:
 3. Select the following options:  
 a. Key Type: Symmetric  
 b. Key Material Origin: KMS  <br/> <br/>
-![My Image](../images/configure-key.png)
+![My Image](../images/configure-key.PNG)
 click next, fill in the following options:  
 a. Create alias and description: LAMBDA_KMS_KEY  
 b. Tags: (skip)  <br/> <br/>
-![My Image](../images/add-labels.png)
+![My Image](../images/add-labels.PNG)
 click next, fill in the following options:  
 Key administrators: Appropriate Admin as per requirements
 Key deletion: Yes <br/> <br/>
 ![key-administrative-permissions](../images/key-administrative-permissions.PNG)
 ![My Image](../images/key-usage-permissions.PNG)
 click next and then click finish
-![My Image](../images/review-and-edit.png)
+![My Image](../images/review-and-edit.PNG)
 4. Go to the KMS console in customer managed keys, u will see the newly created key with the specified key alias. 
 ![My Image](../images/key-console-image.png)
 5. Copy the KEY ID against that alias
