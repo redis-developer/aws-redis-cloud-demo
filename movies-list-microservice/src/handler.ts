@@ -79,13 +79,43 @@ export const moviesGetHandler: APIGatewayProxyHandler = async (
 ) => {
   try {
     const benchmark = benchmarker("getmovie");
-    const movieId: string = event.pathParameters.id;
+    let movieId: string = event.pathParameters.id;
+    // if the id does not start by "movie:" add it
+    if (!movieId.startsWith("movie:")){
+      movieId = "movie:"+ movieId;
+    }
     const movie = await client.hgetall(movieId);
     benchmark.stop();
     return responseHandler.successMessage({
       data: movie,
     });
   } catch (e) {
+    return responseHandler.errorMessage({
+      errorCode: 500,
+      errorMessage: e.message,
+    });
+  }
+};
+
+export const moviesSaveHandler: APIGatewayProxyHandler = async (
+  event,
+  _context
+) => {
+  try {
+    const movie: any  = JSON.parse(event.body);
+    let movieId: string = event.pathParameters.id;
+
+    const data = await new Promise((resolve, reject) => {
+      searchService.saveMovie(movieId, movie , function (err, result) {
+        if (err) reject(err);
+        resolve(result);
+      });
+    });
+    return responseHandler.successMessage({
+      data,
+    });
+  } catch (e) {
+    console.log(e);
     return responseHandler.errorMessage({
       errorCode: 500,
       errorMessage: e.message,

@@ -41,29 +41,9 @@
       </b-form-group>
 
     <b-form-group 
-        label="REST Implementation"
+        label="Movie Service"
         label-cols=2>
-      <b-form-radio 
-          @change.native="search"
-          v-model="apiServer" 
-          name="some-radios" 
-          value="java" >
-            Java Jedis <small>(Port 8085)</small>
-      </b-form-radio>
-      <b-form-radio 
-          @change.native="search"          
-          v-model="apiServer" 
-          name="some-radios" 
-          value="node">
-            Node.js <small>(port 8086)</small>
-      </b-form-radio>
-      <b-form-radio 
-          @change.native="search"          
-          v-model="apiServer" 
-          name="some-radios" 
-          value="python">
-            Python <small>(port 8087)</small>
-      </b-form-radio>
+            <b-form-input v-model="movieApiServer" readOnly />
     </b-form-group>
 
     <b-form-group 
@@ -106,6 +86,9 @@
         <b-col>
         {{ doc.fields.genre }}
         </b-col>
+        <b-col>
+          <b-button size="sm" @click="goToMovie( doc.meta.id)">View</b-button>
+        </b-col>
         <b-col class="text-right">
         {{ doc.fields.rating }}
         </b-col>
@@ -145,8 +128,8 @@ export default {
   name: 'Home',
   data() {
     return {
-      apiServer : "node",
-      searchQuery : undefined,
+      movieApiServer : this.$apiServers.movies,
+      searchQuery : "*",
       searchOffset : 0,
       searchLimit : 10,
       searchResult : {
@@ -173,20 +156,22 @@ export default {
     }
   },
   created() {
+
     this.queryList.push({ value: null, text: 'You can also select a sample query' });
     this.$sampleQueries.forEach(query => {
       this.queryList.push({ value: query.form, text: query.title });
     });
+    this.search();
   },
   methods : {
 
     async search() {
       const {data} = await SearchClient.search(
+                          this.movieApiServer,
                           this.searchQuery, 
                           this.searchOffset, 
                           this.searchLimit, 
-                          this.sortBy, 
-                          this.apiServer);
+                          this.sortBy);
       
       
       this.searchResult = data;
@@ -210,6 +195,10 @@ export default {
       this.searchQuery = value;
       this.searchOffset = 0; 
       this.search();
+    },
+    goToMovie(id) {
+      console.log(id);
+      this.$router.push({ name: 'MovieForm', params: { id: id }});
     }
   },
 

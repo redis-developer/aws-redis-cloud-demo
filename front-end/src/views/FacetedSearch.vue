@@ -57,57 +57,44 @@
 
           <b-card bg-variant="light" >
 
+                <b-form @submit="search" >
+
             <b-row>
-              <b-col cols="5">
+              <b-col>
 
-            <b-form @submit="search" >
-              <b-form-group
-                label-cols=2
-                label="Search" >
-                <b-form-input v-model="query" >
-                </b-form-input>
-              </b-form-group>
-              
-            <b-form-group 
-                label="REST"
-                label-cols=2>
-              <b-form-radio 
-                  @change.native="switchLangage"
-                  v-model="apiServer" 
-                  name="some-radios" 
-                  value="java" >
-                    Java Jedis <small>(Port 8085)</small>
-              </b-form-radio>
-              <b-form-radio 
-                  @change.native="switchLangage"          
-                  v-model="apiServer" 
-                  name="some-radios" 
-                  value="node">
-                    Node.js <small>(port 8086)</small>
-              </b-form-radio>
-              <b-form-radio 
-                  @change.native="switchLangage"          
-                  v-model="apiServer" 
-                  name="some-radios" 
-                  value="python">
-                    Python <small>(port 8087)</small>
-              </b-form-radio>
-            </b-form-group>
+                <b-form-group
+                  label-cols=2
+                  label="Search" >
+                  <b-form-input v-model="query" >
+                  </b-form-input>
+                </b-form-group>
 
-            <b-form-group 
-                label-cols=2>
-                <b-button size="sm" text="Button" @click="search"  >Search</b-button>
-            </b-form-group>
+                <b-form-group 
+                    label="Movie Service"
+                    label-cols=2>
+                        <b-form-input v-model="movieApiServer" readOnly />
+                </b-form-group>
 
-            </b-form>
+                <b-form-group 
+                    label-cols=2>
+                    <b-button size="sm" text="Button" @click="search"  >Search</b-button>
+                </b-form-group>
+
 
               </b-col>
-              <b-col cols="7">
-                <br/>
-                RediSearch Query:<br/> 
+              </b-row>
+              <b-row>
+
+              <b-col cols="2">
+                RediSearch Query:
+              </b-col>
+
+              <b-col >
                 <small class="text-monospace">FT.SEARCH idx:movie "{{searchQuery}}"</small>
               </b-col>
             </b-row>
+                </b-form>
+
 
           </b-card>
 
@@ -141,6 +128,9 @@
         <b-row>
         <b-col>
         {{ doc.fields.genre }}
+        </b-col>
+        <b-col>
+          <b-button size="sm" @click="goToMovie( doc.meta.id)">View</b-button>
         </b-col>
         <b-col class="text-right">
         {{ doc.fields.rating }}
@@ -195,7 +185,7 @@ export default {
   },
   data() {
     return {
-      apiServer : "java",
+      movieApiServer : this.$apiServers.movies,
 
       query: "",
       genreList : [],
@@ -226,7 +216,7 @@ export default {
   methods : {
 
     async loadMovieGenre() {
-      const {data} = await SearchClient.getMovieGroupBy(this.apiServer, "genre");
+      const {data} = await SearchClient.getMovieGroupBy(this.movieApiServer, "genre");
       const genres = data.rows;
       this.genreOptions = [];
       this.genreList = genres;
@@ -241,11 +231,11 @@ export default {
         ;
 
       const {data} = await SearchClient.search(
+                          this.movieApiServer,
                           this.searchQuery, 
                           this.searchOffset, 
                           this.searchLimit, 
-                          this.sortBy, 
-                          this.apiServer);
+                          this.sortBy);
       
       
       this.searchResult = data;
@@ -291,6 +281,11 @@ export default {
     changeSlider() {
       this.search();
     },
+
+    goToMovie(id) {
+      console.log(id);
+      this.$router.push({ name: 'MovieForm', params: { id: id }});
+    }    
   },
 
 }

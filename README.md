@@ -16,16 +16,11 @@
 
 ![My Image](./images/high-level-architectural-diagram.png)
 
-
-
 ### List of Functionalities
 
--  User Registration
--  Merchant Search
--  Paying Money to merchants
--  Merchant Suggestion based on previous transaction history
--  CRON lambda to process payments
--  User profile
+- Movie List, Search, Agreegation/Sorting using 
+- Adding, Deleting Comments to a movie
+- Movie comments search
 
 ## Phase #1
 - Leveraging RediSearch
