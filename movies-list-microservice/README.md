@@ -1,6 +1,6 @@
 # Movie Comments Microservice
 
-## About the service:
+### About the service
 Implements Movie CRUD and Queries functionality  using the [Redis Enterprise Cloud](https://redislabs.com/) with the [RediSearch module](https://oss.redislabs.com/redisearch/) and the [Serverless Framework](https://www.serverless.com)
 
 ### Pre Requisites
