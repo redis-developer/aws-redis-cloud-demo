@@ -26,7 +26,7 @@ Default region name [None]: us-west-2
 Default output format [None]:
 ```
 
-Setting up KMS:
+### Setting up KMS:
 1. Go to: https://console.aws.amazon.com/kms/home
 ![My Image](../images/console.PNG)
 2. Click on Customer Managed Keys and then click on create key button on the top right.
