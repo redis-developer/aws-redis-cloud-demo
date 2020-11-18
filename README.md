@@ -1,7 +1,11 @@
 # A Demo App using Redis Enterprise Cloud with AWS Services
 
 
-## High Level Requirements:
+### About
+This is demo of a movie discovery application using the [Redis Enterprise Cloud](https://redislabs.com/) and the [Serverless Architeture] (https://en.wikipedia.org/wiki/Serverless_computing) on Amazon Web Services (AWS) using the [AWS lambda](https://aws.amazon.com/lambda/) for serverless compute.
+
+
+### High Level Requirements:
 
 - Create a microservice based application using multiple AWS Services (Lambda, Kinesis, Athena, ...).
 - Developer should be able to:
