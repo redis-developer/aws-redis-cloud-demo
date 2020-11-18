@@ -16,13 +16,6 @@ Follow these steps to create an IAM user for the Serverless Framework:
 $ serverless config credentials --provider provider --key key --secret secret
 ```
 
-Or you can also set environment variables:
-
-```
-$ export AWS_ACCESS_KEY_ID={}
-$ export AWS_SECRET_ACCESS_KEY={}
-```
-
 ### Install Dependencies
 
 ```bash
@@ -43,14 +36,12 @@ All of the Lambda functions in your serverless service can be found in serverles
     REDIS_PORT: [REDIS_PORT]
     REDIS_PASSWORD: [REDIS_PASSWORD]
 ```
-- Set the same credentials in import.sh file
+- Set the same credentials in import.sh file (for 1 time import of seed data)
 
 - Run the following command to load the dataset into your redis instance:
 ```bash
 bash import.sh
 ``` 
-
-
 
 - run &nbsp; `serverless deploy`, you should get an output like this:
 ```bash

@@ -14,8 +14,7 @@
 
 ## High Level Architectural Diagram
 
-![My Image](./images/image.png)
-
+![My Image](./images/high-level-architectural-diagram.png)
 
 ### List of Functionalities
 
