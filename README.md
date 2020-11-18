@@ -30,7 +30,7 @@
    
 ## Setup
 1. [Deploying the Frontend Code](./front-end/README.md)
-2. [Deploying the Movies List Microservice](./movies-list-microservice/readme.md)
+2. [Deploying the Movies List Microservice](./movies-list-microservice/README.md)
 2. [Deploying the Movies Comments Microservice](./movie-comments-microservice/readme.md)
 
 ## Pre-requisite:
