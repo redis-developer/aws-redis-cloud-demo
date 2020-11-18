@@ -28,7 +28,7 @@ Default output format [None]:
 
 Setting up KMS:
 1. Go to: https://console.aws.amazon.com/kms/home
-![My Image](../images/console.png)
+![My Image](../images/console.PNG)
 2. Click on Customer Managed Keys and then click on create key button on the top right.
 ![My Image](../images/customer-managed-key.png)
 3. Select the following options:  
