@@ -27,6 +27,11 @@
 - Implement RedisSearch demo connected to AWS using Typescript 
 
 <tbd>
+   
+## Setup
+1. [Deploying the Frontend Code](./front-end/README.md)
+2. [Deploying the Movies List Microservice](./movies-list-microservice/README.md)
+2. [Deploying the Movies Comments Microservice](./movie-comments-microservice/README.md)
 
 ## Pre-requisite:
 
