@@ -1,5 +1,8 @@
+# Movie Comments Microservice
 
-## Set Up
+### About the service
+Implements CRUD operation using [Redis Enterprise Cloud](https://redislabs.com/#signup-modal) and the [AWS Chalice framework](https://aws.github.io/chalice/quickstart.html).
+
 
 ### Create a virtual environment:
 ```
@@ -48,7 +51,6 @@ click next and then click finish
 ![My Image](../images/review-and-edit.png)
 4. Go to the KMS console in customer managed keys, u will see the newly created key with the specified key alias. 
 ![My Image](../images/key-console-image.png)
-
 5. Copy the KEY ID against that alias
 
 6. Run the following command:

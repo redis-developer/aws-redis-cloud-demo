@@ -14,8 +14,7 @@
 
 ## High Level Architectural Diagram
 
-![My Image](./images/image.png)
-
+![My Image](./images/high-level-architectural-diagram.png)
 
 ### List of Functionalities
 
@@ -28,6 +27,11 @@
 - Implement RedisSearch demo connected to AWS using Typescript 
 
 <tbd>
+   
+## Setup
+1. [Deploying the Frontend Code](./front-end/README.md)
+2. [Deploying the Movies List Microservice](./movies-list-microservice/README.md)
+2. [Deploying the Movies Comments Microservice](./movie-comments-microservice/readme.md)
 
 ## Pre-requisite:
 
