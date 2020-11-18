@@ -1,4 +1,7 @@
-# How to use Redis Enterprise Cloud with AWS Lambda and serverless architecture
+# Movie Comments Microservice
+
+## About the service:
+Implements Movie CRUD and Queries functionality  using the [Redis Enterprise Cloud](https://redislabs.com/) with the [RediSearch module](https://oss.redislabs.com/redisearch/) and the [Serverless Framework](https://www.serverless.com)
 
 ### Pre Requisites
 - Nodejs 
