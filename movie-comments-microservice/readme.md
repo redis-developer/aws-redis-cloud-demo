@@ -42,8 +42,8 @@ b. Tags: (skip)  <br/> <br/>
 click next, fill in the following options:  
 Key administrators: Appropriate Admin as per requirements
 Key deletion: Yes <br/> <br/>
-![My Image](../images/key-administrative-permissions.png)
-![My Image](../images/key-usage-permissions.png)
+![key-administrative-permissions](../images/key-administrative-permissions.PNG)
+![My Image](../images/key-usage-permissions.PNG)
 click next and then click finish
 ![My Image](../images/review-and-edit.png)
 4. Go to the KMS console in customer managed keys, u will see the newly created key with the specified key alias. 
