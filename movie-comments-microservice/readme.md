@@ -1,8 +1,8 @@
 # Movie Comments Microservice
 
-# Setting Up the Movie Comments Microservice
+## About the service
+Implements CRUD operation using [Redis Enterprise Cloud](https://redislabs.com/#signup-modal) and the [AWS Chalice framework](https://aws.github.io/chalice/quickstart.html).
 
-[Developed using the AWS Chalice framework](https://aws.github.io/chalice/quickstart.html)
 
 ### Create a virtual environment:
 ```
