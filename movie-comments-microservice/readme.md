@@ -1,5 +1,7 @@
 
-## Set Up
+## Setting Up the Movie Comments Microservice
+
+[Developed using the AWS Chalice framework](https://aws.github.io/chalice/quickstart.html)
 
 ### Create a virtual environment:
 ```
