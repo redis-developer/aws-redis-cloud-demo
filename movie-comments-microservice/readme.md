@@ -33,7 +33,9 @@ Setting up KMS:
 1. Go to: https://console.aws.amazon.com/kms/home
 
 ![My Image](../images/console.png)
+
 2. Click on Customer Managed Keys and then click on create key button on the top right.
+
 ![My Image](../images/customer-managed-key.png)
 
 3. Select the following options:  
@@ -47,6 +49,7 @@ a. Create alias and description: LAMBDA_KMS_KEY
 b. Tags: (skip)  <br/> <br/>
 
 ![My Image](../images/add-labels.png)
+
 click next, fill in the following options:  
 Key administrators: Appropriate Admin as per requirements
 Key deletion: Yes <br/> <br/>
@@ -54,9 +57,13 @@ Key deletion: Yes <br/> <br/>
 ![My Image](../images/key-administrative-permissions.png)
 
 ![My Image](../images/key-usage-permissions.png)
+
 click next and then click finish
+
 ![My Image](../images/review-and-edit.png)
+
 4. Go to the KMS console in customer managed keys, u will see the newly created key with the specified key alias. 
+
 ![My Image](../images/key-console-image.png)
 
 5. Copy the KEY ID against that alias
