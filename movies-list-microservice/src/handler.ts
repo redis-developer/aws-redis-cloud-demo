@@ -1,8 +1,6 @@
 import { APIGatewayProxyHandler } from "aws-lambda";
 import "source-map-support/register";
-import * as client from "./utils/redis";
 import * as responseHandler from "./utils/responseHandler";
-import { benchmarker } from "./utils/timeUtils";
 import { SearchService } from "./services/SearchService";
 import { Options } from "./models/handler";
 const searchService = new SearchService();
@@ -78,17 +76,15 @@ export const moviesGetHandler: APIGatewayProxyHandler = async (
   _context
 ) => {
   try {
-    const benchmark = benchmarker("getmovie");
-    let movieId: string = event.pathParameters.id;
-    // if the id does not start by "movie:" add it
-    if (!movieId.startsWith("movie:")){
-      movieId = "movie:"+ movieId;
-    }
-    const movie = await client.hgetall(movieId);
-    benchmark.stop();
-    return responseHandler.successMessage({
-      data: movie,
+    const data = await new Promise((resolve, reject) => {
+      searchService.getMovieById(event.pathParameters.id, function (err, result) {
+        if (err) reject(err);
+        resolve(result);
+      });
     });
+    return responseHandler.successMessage({
+      data,
+    });    
   } catch (e) {
     return responseHandler.errorMessage({
       errorCode: 500,

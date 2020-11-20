@@ -151,6 +151,37 @@ class SearchService {
     } );    
   }
 
+
+  /**
+   * returns the movie by id, returns an empty movie if not present
+   * @param id 
+   * @param callback 
+   */
+  getMovieById(id, callback) {
+    let movieId: string = id;
+    // if the id does not start by "movie:" add it
+    if (!movieId.startsWith("movie:")){
+      movieId = "movie:"+ movieId;
+    }
+
+    client.hgetall(movieId, function (err, movie){
+      // Empty movie
+      if (!movie){
+        movie = {
+          ibmdb_id: null,
+          genre: null,
+          plot: null,
+          title: null,
+          rating: null,
+          release_year: null,
+          votes: null,
+          poster: null
+          }      
+      }
+      callback(err, movie);
+    });
+  }
+
 }
 
 export { SearchService };
