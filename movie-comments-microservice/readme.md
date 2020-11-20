@@ -9,6 +9,7 @@ python3 -m venv chalice-env
 ```
 source chalice-env/bin/activate
 ```
+
 ### Install requirements:
 ```
 pip install -r requirements.txt
@@ -18,6 +19,7 @@ pip install -r requirements.txt
 ```
 aws configure
 ```
+
 Follow command prompt, output should be something like:
 ```
 AWS Access Key ID [None]: ****************ABCD
@@ -84,6 +86,17 @@ source chalice-env/bin/activate
 2. Execute Chalice Deploy command
 ```
 chalice deploy
+```
+You should get a response like this:
+```
+
+Reusing existing deployment package.
+Updating policy for IAM role: movie-comments-microservice-dev
+Creating lambda function: movie-comments-microservice-dev
+Creating Rest API
+Resources deployed:
+  - Lambda ARN: arn:aws:lambda:us-east-1:11111111111:function:movie-comments-microservice-dev
+  - Rest API URL: https://XXXXXXX.execute-api.us-east-1.amazonaws.com/api/
 ```
 
 ## Running locally

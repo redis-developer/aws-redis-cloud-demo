@@ -1,3 +1,0 @@
-export AWS_ACCESS_KEY_ID=AKIAXCMF7Y7WX4BBCACP
-export AWS_SECRET_ACCESS_KEY=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
-chalice deploy
