@@ -5,9 +5,9 @@
     "dev": {
       "api_gateway_stage": "api",
       "environment_variables": {
-        "REDIS_HOST": "redis-12555.c212.ap-south-1-1.ec2.cloud.redislabs.com",
-        "REDIS_PORT": "12555",
-        "REDIS_PASSWORD": "AQICAHjyHd7fXfe0n6U2QqR0uzjM+Wwu6rXiEv3W6miCZQrWrgG8ivVq6b3UAb2rxTI5baOdAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMcNPArKJ7k6Nqr6nKAgEQgDPuNKRhWbbUEX3UFQ5ZnoLUdxzGgNT7BbwpukEQ/mRxV0Z/2dYgHIrV90mEkaTypmP8qaE="
+        "REDIS_HOST": "",
+        "REDIS_PORT": "",
+        "REDIS_PASSWORD": ""
       }
     }
   }

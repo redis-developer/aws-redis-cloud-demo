@@ -13,9 +13,9 @@ provider:
   name: aws
   runtime: nodejs10.x
   environment:
-    REDIS_HOST: redis-18541.c212.ap-south-1-1.ec2.cloud.redislabs.com
-    REDIS_PORT: 18541
-    REDIS_PASSWORD: 9wfEliRStTNoO0jrK6r9t1ZdTLVf1eYK
+    REDIS_HOST: XXXXXXXX.XXXX.XXXXXXXX.XXX.cloud.redislabs.com #redislabs db host 
+    REDIS_PORT: 6379  #redislabs db port 
+    REDIS_PASSWORD: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  #redislabs db password 
 
 functions:
   listMovies:
@@ -26,7 +26,6 @@ functions:
           path: movies/search
           cors: true
   searchMovies:
-    # handler: src/handler.moviesGroupByHandler
     handler: src/handler.moviesGroupByHandler
     events:
       - http:

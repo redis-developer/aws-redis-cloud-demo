@@ -26,7 +26,6 @@ cd movies-list-microservice
 npm install
 ```
 
-
 ### Configuring serverless framework
 All of the Lambda functions in your serverless service can be found in serverless.yml under the functions property.
 
@@ -39,11 +38,10 @@ All of the Lambda functions in your serverless service can be found in serverles
     REDIS_PORT: [REDIS_PORT]
     REDIS_PASSWORD: [REDIS_PASSWORD]
 ```
-- Set the same credentials in import.sh file (for 1 time import of seed data)
 
 - Run the following command to load the dataset into your redis instance:
 ```bash
-bash import.sh
+redis-cli -p [redislabsport]  -h [redislabshost]  -a [password] < import_movies.redis
 ``` 
 
 - run &nbsp; `serverless deploy`, you should get an output like this:
@@ -57,9 +55,9 @@ resources: 24
 api keys:
   None
 endpoints:
-  GET - https://2fvmk4hv32.execute-api.us-east-1.amazonaws.com/dev/movies/search
-  GET - https://2fvmk4hv32.execute-api.us-east-1.amazonaws.com/dev/movies/group_by/{field}
-  GET - https://2fvmk4hv32.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
+  GET - https://XXXXXXXX.execute-api.us-east-1.amazonaws.com/dev/movies/search
+  GET - https://XXXXXXXX.execute-api.us-east-1.amazonaws.com/dev/movies/group_by/{field}
+  GET - https://XXXXXXXX.execute-api.us-east-1.amazonaws.com/dev/movies/{id}
 functions:
   listMovies: movies-list-microservice-dev-listMovies
   searchMovies: movies-list-microservice-dev-searchMovies
@@ -70,7 +68,7 @@ Serverless: Removing old service artifacts from S3...
 Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.
 
 ```
-- Copy this base `https://2fvmk4hv32.execute-api.us-east-1.amazonaws.com/dev` endpoint and paste into our frontend env url and paste in env.development
+- Copy this base `https://XXXXXXXX.execute-api.us-east-1.amazonaws.com/dev` endpoint and paste into our frontend env url and paste in env.development
 - Follow the steps mentioned in the front-end folder for running the frontend
 
 ### Working in Local mode
