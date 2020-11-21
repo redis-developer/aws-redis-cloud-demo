@@ -1,1 +1,1 @@
-# List of images
+# Image assets for docs
