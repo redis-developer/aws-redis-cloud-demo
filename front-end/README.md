@@ -1,4 +1,4 @@
-# front-end
+# Front-end application for the movie comments microservice
 
 ## Project setup
 ```
