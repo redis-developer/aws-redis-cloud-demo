@@ -29,7 +29,7 @@ The application is made of 3 components:
    
 ## Setup
 1. [Deploying the Movies List Microservice](./movies-list-microservice/README.md)
-1. [Deploying the Movies Comments Microservice](./movie-comments-microservice/readme.md)
+1. [Deploying the Movies Comments Microservice](./movie-comments-microservice/README.md)
 1. [Deploying the Frontend Code](./front-end/README.md) *(Optional)*
 
 
