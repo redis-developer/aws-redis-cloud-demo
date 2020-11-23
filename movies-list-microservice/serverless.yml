@@ -1,0 +1,49 @@
+service:
+  name: movies-list-microservice
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  stage: api
+  runtime: nodejs10.x
+  environment:
+    REDIS_HOST: <CHANGE-TO-REDISCLOUD-DB-HOST>.cloud.redislabs.com
+    REDIS_PORT: <CHANGE-TO-REDISCLOUD-DB-PORT>
+    REDIS_PASSWORD: <CHANGE-TO-REDISCLOUD-DB-PASSWORD> 
+
+functions:
+  listMovies:
+    handler: src/handler.moviesListHandler
+    events:
+      - http:
+          method: get
+          path: movies/search
+          cors: true
+  searchMovies:
+    handler: src/handler.moviesGroupByHandler
+    events:
+      - http:
+          method: get
+          path: movies/group_by/{field}
+          cors: true
+  getMovie:
+    handler: src/handler.moviesGetHandler
+    events:
+      - http:
+          method: get
+          path: movies/{id}
+          cors: true
+  saveMovie:
+    handler: src/handler.moviesSaveHandler
+    events:
+      - http:
+          method: post
+          path: movies/{id}
+          cors: true

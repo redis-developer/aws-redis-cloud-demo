@@ -1,0 +1,3 @@
+.chalice-env/
+.chalice/deployed/
+.chalice/deployments/
