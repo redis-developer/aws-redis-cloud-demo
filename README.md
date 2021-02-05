@@ -2,7 +2,7 @@
 
 
 ### About
-This is demo of a movie discovery application using the [Redis Enterprise Cloud](https://redislabs.com/) and the [Serverless Architecture](https://en.wikipedia.org/wiki/Serverless_computing) on Amazon Web Services (AWS) using the [AWS lambda](https://aws.amazon.com/lambda/) for serverless compute.
+This is demo of a movie discovery application using the [Redis Enterprise Cloud](https://redislabs.com/) and the [Serverless Architecture](https://en.wikipedia.org/wiki/Serverless_computing) on Amazon Web Services (AWS) using [AWS Lambda](https://aws.amazon.com/lambda/) for serverless compute.
 
 
 ## Pre-requisite:
