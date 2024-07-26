@@ -109,5 +109,3 @@ export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 aws s3 sync . s3://redissearchdemo --delete --acl public-read 
 ```
-
-## Demo URL: http://redissearchdemo.s3-website-us-east-1.amazonaws.com/#/
