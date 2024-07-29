@@ -107,5 +107,5 @@ To update the public read access to anyone in the world updating the Bucket Poli
 ```
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
-aws s3 sync . s3://redissearchdemo --delete --acl public-read 
+aws s3 sync . s3://www.my-awesome-site.com --delete --acl public-read 
 ```
